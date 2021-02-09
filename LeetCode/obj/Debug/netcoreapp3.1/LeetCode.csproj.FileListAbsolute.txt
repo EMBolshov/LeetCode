@@ -1,0 +1,9 @@
+C:\Users\ПК\RiderProjects\LeetCode\LeetCode\bin\Debug\netcoreapp3.1\LeetCode.deps.json
+C:\Users\ПК\RiderProjects\LeetCode\LeetCode\bin\Debug\netcoreapp3.1\LeetCode.dll
+C:\Users\ПК\RiderProjects\LeetCode\LeetCode\bin\Debug\netcoreapp3.1\LeetCode.pdb
+C:\Users\ПК\RiderProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.csprojAssemblyReference.cache
+C:\Users\ПК\RiderProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.AssemblyInfoInputs.cache
+C:\Users\ПК\RiderProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.AssemblyInfo.cs
+C:\Users\ПК\RiderProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.csproj.CoreCompileInputs.cache
+C:\Users\ПК\RiderProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.dll
+C:\Users\ПК\RiderProjects\LeetCode\LeetCode\obj\Debug\netcoreapp3.1\LeetCode.pdb

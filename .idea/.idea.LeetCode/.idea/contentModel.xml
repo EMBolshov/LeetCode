@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\ПК\.nuget\packages\microsoft.net.test.sdk\16.7.1\build\netcoreapp2.1" t="Include">
+      <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
+    </e>
+    <e p="C:\Users\ПК\.nuget\packages\microsoft.testplatform.testhost\16.7.1\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\ПК\.nuget\packages\microsoft.testplatform.testhost\16.7.1\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\ПК\.nuget\packages\mstest.testadapter\2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\ПК\.nuget\packages\mstest.testadapter\2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+    <e p="C:\Users\ПК\.nuget\packages\mstest.testadapter\2.1.1\build\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
+    <e p="C:\Users\ПК\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ПК\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_LeetCode.839736128.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ПК\AppData\Roaming\JetBrains\Rider2020.3\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\ПК\RiderProjects\LeetCode" t="IncludeFlat">
+      <e p="LeetCode" t="IncludeRecursive">
+        <e p="Arrays101" t="Include">
+          <e p="1_Introduction" t="Include">
+            <e p="FindNumbersWithEvenNumberOfDigits.cs" t="Include" />
+            <e p="MaxConsecutiveOnes.cs" t="Include" />
+            <e p="SquaresOfASortedArray.cs" t="Include" />
+          </e>
+          <e p="2_InsertingItemsIntoAnArray" t="Include">
+            <e p="DuplicateZeroes.cs" t="Include" />
+            <e p="MergeSortedArray.cs" t="Include" />
+          </e>
+          <e p="3_DeletingItemsFromArray" t="Include" />
+          <e p="4_SearchingForItemsInArray" t="Include">
+            <e p="CheckIfNAndItsDoubleExists.cs" t="Include" />
+            <e p="ValidMountainArray.cs" t="Include" />
+          </e>
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="LeetCode.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="LeetCode.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="LeetCode.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="TestSolutions" t="IncludeRecursive">
+        <e p="Array101" t="Include">
+          <e p="1_Introduction" t="Include">
+            <e p="CheckSolution.cs" t="Include" />
+          </e>
+          <e p="2_InsertingItemsIntoAnArray" t="Include">
+            <e p="CheckSolution.cs" t="Include" />
+          </e>
+          <e p="3_DeletingItemsFromArray" t="Include" />
+          <e p="4_SearchingForItemsInArray" t="Include">
+            <e p="CheckSolution.cs" t="Include" />
+          </e>
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.1" t="Include">
+              <e p="TestSolutions.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="TestSolutions.csproj" t="IncludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
