@@ -18,8 +18,4 @@
       <ProjectReference Include="..\LeetCode\LeetCode.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Array101\3_DeletingItemsFromArray" />
-    </ItemGroup>
-
 </Project>
