@@ -77,3 +77,5 @@ orleans.codegen.cs
 # JetBrains Rider
 .idea/
 *.sln.iml
+.idea/.idea.LeetCode/.idea/contentModel.xml
+.idea/.idea.LeetCode/.idea/workspace.xml
