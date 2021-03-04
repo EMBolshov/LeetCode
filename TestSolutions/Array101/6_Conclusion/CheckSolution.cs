@@ -53,7 +53,37 @@ namespace TestSolutions.Array101._6_Conclusion
         [TestMethod]
         public void ThirdMaximumNumberTest()
         {
+            var testData = new[] {3, 2, 1};
+            var result = ThirdMaximumNumber.ThirdMax(testData);
+            result.Should().Be(1);
             
+            testData = new[] {1, 2};
+            result = ThirdMaximumNumber.ThirdMax(testData);
+            result.Should().Be(2);
+            
+            testData = new[] {2, 2, 3, 1};
+            result = ThirdMaximumNumber.ThirdMax(testData);
+            result.Should().Be(1);
+            
+            testData = new[] {1, 1, 2};
+            result = ThirdMaximumNumber.ThirdMax(testData);
+            result.Should().Be(2);
+            
+            testData = new[] {2, 2, 2, 1};
+            result = ThirdMaximumNumber.ThirdMax(testData);
+            result.Should().Be(2);
+            
+            testData = new[] {1, 2, 2, 5, 3, 5};
+            result = ThirdMaximumNumber.ThirdMax(testData);
+            result.Should().Be(2);
+            
+            testData = new[] {5, 2, 4, 1, 3, 6, 0};
+            result = ThirdMaximumNumber.ThirdMax(testData);
+            result.Should().Be(4);
+            
+            testData = new[] {3, 2, 3, 1, 2, 4, 5, 5, 6};
+            result = ThirdMaximumNumber.ThirdMax(testData);
+            result.Should().Be(4);
         }
     }
 }

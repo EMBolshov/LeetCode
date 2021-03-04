@@ -8,6 +8,7 @@ namespace LeetCode.Arrays101._6_Conclusion
     /// </summary>
     public static class FindAllNumbersDisappearedInArray
     {
+        //Also bad solution cuz of Array.Sort() -> O(n log n)
         public static IList<int> FindDisappearedNumbers(int[] nums)
         {
             var res = new List<int>();
