@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace LeetCode.Arrays101._6_Conclusion
+﻿namespace LeetCode.Arrays101._6_Conclusion
 {
     /// <summary>
     /// https://leetcode.com/explore/learn/card/fun-with-arrays/523/conclusion/3231/
@@ -13,32 +11,29 @@ namespace LeetCode.Arrays101._6_Conclusion
             int? second = null;
             int? third = null;
 
-            for (int i = 0; i < nums.Length; i++)
+            foreach (var n in nums)
             {
-                if (first == nums[i] || second == nums[i] || third == nums[i])
+                if (first == n || second == n || third == n)
                     continue;
 
-                if (nums[i] > first)
+                if (n > first)
                 {
                     third = second;
                     second = first;
-                    first = nums[i];
+                    first = n;
                 }
-                else if (second == null || nums[i] > second)
+                else if (second == null || n > second)
                 {
                     third = second;
-                    second = nums[i];
+                    second = n;
                 }
-                else if (third == null || nums[i] > third)
+                else if (third == null || n > third)
                 {
-                    third = nums[i];
+                    third = n;
                 }
             }
 
-            if (third == null)
-                return first;
-
-            return third.Value;
+            return third ?? first;
         }
     }
 }
