@@ -4,4 +4,11 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="LinkedList\2_TwoPointerTechnique" />
+      <Folder Include="LinkedList\3_ClassicProblems" />
+      <Folder Include="LinkedList\4_DoublyLinkedList" />
+      <Folder Include="LinkedList\5_Conclusion" />
+    </ItemGroup>
+
 </Project>
