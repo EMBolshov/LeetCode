@@ -14,7 +14,7 @@
             return null;
         }
         
-        // while (current.Next != null) length++; return length;
+        // while (current.Next != null) { current = current.Next; length++; } return length;
         public static int GetLength(this MyLinkedList current)
         {
             return GetNext(current, 1);
@@ -29,6 +29,62 @@
 
                 return length;
             }
+        }
+
+        public static MyLinkedList GetTail(this MyLinkedList head)
+        {
+            var current = head.Next;
+            while (current?.Next != null)
+            {
+                current = current.Next;
+            }
+
+            return current;
+        }
+        
+        public static bool HasCycle(this MyLinkedList head)
+        {
+            if (head?.Next == null)
+                return false;
+
+            if (head.Next == head)
+                return true;
+            
+            var firstPointer = head;
+            var secondPointer = head.Next?.Next;
+            if (secondPointer == null)
+                return false;
+
+            while (true)
+            {
+                if (firstPointer == secondPointer)
+                    return true;
+                
+                firstPointer = firstPointer.Next;
+                if (firstPointer == null)
+                    return false;
+
+                secondPointer = secondPointer.Next?.Next;
+                if (secondPointer == null)
+                    return false;
+            }
+        }
+        
+        public static MyLinkedList GetIntersect(this MyLinkedList head)
+        {
+            var firstPointer = head;
+            var secondPointer = head;
+            
+            while (firstPointer?.Next != null)
+            {
+                firstPointer = firstPointer.Next;
+                secondPointer = secondPointer?.Next?.Next;
+
+                if (firstPointer == secondPointer)
+                    return firstPointer;
+            }
+
+            return null;
         }
     }
 }
