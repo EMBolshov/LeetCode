@@ -3,17 +3,17 @@
     public static class MyLinkedListExtensions
     {
         // for (int i = 0; i <= n; i++) {current = current.Next; return current;}
-        public static MyLinkedList GetElementAtIndex(this MyLinkedList current, int index)
+        public static MyLinkedList GetNodeAtIndex(this MyLinkedList current, int index)
         {
-            if (index == 0)
+            if (index <= 0)
                 return current;
 
             if (current.Next != null)
-                return GetElementAtIndex(current.Next, index - 1);
+                return GetNodeAtIndex(current.Next, index - 1);
 
             return null;
         }
-        
+
         // while (current.Next != null) { current = current.Next; length++; } return length;
         public static int GetLength(this MyLinkedList current)
         {
@@ -41,7 +41,7 @@
 
             return current;
         }
-        
+
         public static bool HasCycle(this MyLinkedList head)
         {
             if (head?.Next == null)
@@ -49,7 +49,7 @@
 
             if (head.Next == head)
                 return true;
-            
+
             var firstPointer = head;
             var secondPointer = head.Next?.Next;
             if (secondPointer == null)
@@ -59,7 +59,7 @@
             {
                 if (firstPointer == secondPointer)
                     return true;
-                
+
                 firstPointer = firstPointer.Next;
                 if (firstPointer == null)
                     return false;
@@ -69,12 +69,12 @@
                     return false;
             }
         }
-        
-        public static MyLinkedList GetIntersect(this MyLinkedList head)
+
+        public static MyLinkedList GetCycleIntersect(this MyLinkedList head)
         {
             var firstPointer = head;
             var secondPointer = head;
-            
+
             while (firstPointer?.Next != null)
             {
                 firstPointer = firstPointer.Next;
@@ -85,6 +85,11 @@
             }
 
             return null;
+        }
+
+        public static int GetCurrent(this MyLinkedList node)
+        {
+            return node.Get(0);
         }
     }
 }

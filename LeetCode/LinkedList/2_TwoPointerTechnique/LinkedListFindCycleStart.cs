@@ -12,7 +12,7 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
             if (head?.Next == null)
                 return null;
             
-            var intersect = head.GetIntersect();
+            var intersect = head.GetCycleIntersect();
             if (intersect == null)
                 return null;
 

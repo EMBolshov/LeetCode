@@ -35,7 +35,7 @@
             if (index < 0)
                 return -1;
             
-            var element = this.GetElementAtIndex(index);
+            var element = this.GetNodeAtIndex(index);
 
             if (element == null)
                 return -1;
@@ -88,7 +88,7 @@
             if (index > this.GetLength())
                 return;
 
-            var prev = this.GetElementAtIndex(index - 1);
+            var prev = this.GetNodeAtIndex(index - 1);
             var element = new MyLinkedList(val);
             if (prev != null)
             {
@@ -106,7 +106,7 @@
         /** Delete the index-th node in the linked list, if the index is valid. */
         public void DeleteAtIndex(int index)
         {
-            var prev = this.GetElementAtIndex(index - 1);
+            var prev = this.GetNodeAtIndex(index - 1);
 
             if (prev == null)
             {
