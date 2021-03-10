@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using FluentAssertions;
 using LeetCode.LinkedList._1_SinglyLinkedList;
 using LeetCode.LinkedList._2_TwoPointerTechnique;
@@ -66,6 +67,40 @@ namespace TestSolutions.LinkedList._2_TwoPointerTechnique
             intersectionValue = 51;
             MakeIntersection(intersectionValue, listA, listB, 1, 3);
             IntersectionOfTwoLinkedLists.GetIntersectionNode(listA, listB).GetCurrent().Should().Be(intersectionValue);
+        }
+
+        [TestMethod]
+        public void RemoveNthNodeFromEndOfListTest()
+        {
+            var list = GetLinkedListFromArray(new[] {1, 2, 3, 4, 5});
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ToFlatList().Should().BeEquivalentTo(new List<int>
+            {
+                1, 2, 3, 5
+            });
+            
+            list = GetLinkedListFromArray(new[] {1, 2});
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ToFlatList().Should().BeEquivalentTo(new List<int>
+            {
+                2
+            });
+            
+            list = GetLinkedListFromArray(new[] {1, 2});
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 1).ToFlatList().Should().BeEquivalentTo(new List<int>
+            {
+                1
+            });
+
+            list = GetLinkedListFromArray(new[] {1, 2, 3});
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ToFlatList().Should().BeEquivalentTo(new List<int>
+            {
+                1, 3
+            });
+            
+            list = GetLinkedListFromArray(new[] {1, 2, 3});
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 3).ToFlatList().Should().BeEquivalentTo(new List<int>
+            {
+                2, 3
+            });
         }
 
         private MyLinkedList GetCycledLinkedList(int[] values, int cycleIndex)

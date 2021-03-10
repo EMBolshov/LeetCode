@@ -4,6 +4,7 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
 {
     public static class IntersectionOfTwoLinkedLists
     {
+        // O(n^2 + m) solution
         public static MyLinkedList GetIntersectionNode(MyLinkedList headA, MyLinkedList headB)
         {
             if (headA == null || headB == null)

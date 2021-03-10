@@ -1,4 +1,6 @@
-﻿namespace LeetCode.LinkedList._1_SinglyLinkedList
+﻿using System.Collections.Generic;
+
+namespace LeetCode.LinkedList._1_SinglyLinkedList
 {
     public static class MyLinkedListExtensions
     {
@@ -90,6 +92,19 @@
         public static int GetCurrent(this MyLinkedList node)
         {
             return node.Get(0);
+        }
+
+        public static IEnumerable<int> ToFlatList(this MyLinkedList head)
+        {
+            var result = new List<int>();
+
+            while (head != null)
+            {
+                result.Add(head.GetCurrent());
+                head = head.Next;
+            }
+
+            return result;
         }
     }
 }
