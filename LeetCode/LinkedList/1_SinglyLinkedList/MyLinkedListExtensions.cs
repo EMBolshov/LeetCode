@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LeetCode.LinkedList._1_SinglyLinkedList
 {
@@ -105,6 +106,11 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
             }
 
             return result;
+        }
+
+        public static MyLinkedList Reverse(this MyLinkedList list)
+        {
+            throw new NotImplementedException();
         }
     }
 }

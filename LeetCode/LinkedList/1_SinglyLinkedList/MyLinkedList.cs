@@ -1,4 +1,7 @@
-﻿namespace LeetCode.LinkedList._1_SinglyLinkedList
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+
+namespace LeetCode.LinkedList._1_SinglyLinkedList
 {
     /// <summary>
     /// https://leetcode.com/explore/learn/card/linked-list/209/singly-linked-list/1290/
@@ -12,10 +15,12 @@
      * obj.AddAtIndex(index,val);
      * obj.DeleteAtIndex(index);
      */
+    [DebuggerDisplay("{DebuggerDisplay}")]
     public class MyLinkedList
     {
         //Probably, nullable int is better. But -1 is already reserved as error code for incorrect index
         private int _value;
+        private string DebuggerDisplay => GetDebuggerDisplay();
         public MyLinkedList Next { get; set; }
 
         public MyLinkedList()
@@ -117,6 +122,11 @@
             
             var next = prev.Next?.Next;
             prev.Next = next;
+        }
+
+        private string GetDebuggerDisplay()
+        {
+            return string.Join(" | ", this.ToFlatList());
         }
     }
 }

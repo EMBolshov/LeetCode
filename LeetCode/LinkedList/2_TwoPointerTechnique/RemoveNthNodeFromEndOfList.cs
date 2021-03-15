@@ -2,6 +2,9 @@
 
 namespace LeetCode.LinkedList._2_TwoPointerTechnique
 {
+    /// <summary>
+    /// https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1296/
+    /// </summary>
     public static class RemoveNthNodeFromEndOfList
     {
         public static MyLinkedList RemoveNthFromEnd(MyLinkedList head, int n)
@@ -12,6 +15,8 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
             if (head.Next == null && n == 0)
                 return head;
 
+            //The better way is to make something like var tempHead = new MyLinkedList(0); tempHead.Next = head; 
+            //so it is better than null and better than head as init value. After I can just prevBeforeNFromEnd.Next = prevBeforeNFromEnd.Next.Next; return tempHead.Next;
             var pointer = head;
             var prevBeforeNFromEnd = head;
 

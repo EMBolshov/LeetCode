@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode.Arrays101._2_InsertingItemsIntoAnArray
+﻿namespace LeetCode.Arrays101._2_InsertingItemsIntoAnArray
 {
     /// <summary>
     /// https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/3253/
