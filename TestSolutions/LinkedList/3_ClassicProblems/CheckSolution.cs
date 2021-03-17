@@ -14,7 +14,7 @@ namespace TestSolutions.LinkedList._3_ClassicProblems
         public void ReverseListTest()
         {
             var list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 3, 4, 5});
-            ReverseLinkedList.ReverseList(list).ToFlatList().Should().BeEquivalentTo(new List<int>
+            ReverseLinkedList.ReverseList(list).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
             {
                 5, 4, 3, 2, 1
             });

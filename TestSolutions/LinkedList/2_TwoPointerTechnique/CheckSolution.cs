@@ -73,31 +73,31 @@ namespace TestSolutions.LinkedList._2_TwoPointerTechnique
         public void RemoveNthNodeFromEndOfListTest()
         {
             var list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 3, 4, 5});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ToFlatList().Should().BeEquivalentTo(new List<int>
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
             {
                 1, 2, 3, 5
             });
             
             list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ToFlatList().Should().BeEquivalentTo(new List<int>
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
             {
                 2
             });
             
             list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 1).ToFlatList().Should().BeEquivalentTo(new List<int>
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 1).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
             {
                 1
             });
 
             list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 3});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ToFlatList().Should().BeEquivalentTo(new List<int>
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
             {
                 1, 3
             });
             
             list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 3});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 3).ToFlatList().Should().BeEquivalentTo(new List<int>
+            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 3).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
             {
                 2, 3
             });

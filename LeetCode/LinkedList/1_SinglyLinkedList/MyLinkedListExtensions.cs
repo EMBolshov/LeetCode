@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace LeetCode.LinkedList._1_SinglyLinkedList
 {
@@ -95,7 +94,7 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
             return node.Get(0);
         }
 
-        public static IEnumerable<int> ToFlatList(this MyLinkedList head)
+        public static IEnumerable<int> ValuesToFlatList(this MyLinkedList head)
         {
             var result = new List<int>();
 
@@ -108,9 +107,40 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
             return result;
         }
 
-        public static MyLinkedList Reverse(this MyLinkedList list)
+        public static MyLinkedList ReverseIteratively(this MyLinkedList list)
         {
-            throw new NotImplementedException();
+            MyLinkedList prev = null;
+
+            while (list != null)
+            {
+                var head = list;
+                list = list.Next;
+                head.Next = prev;
+                prev = head;
+            }
+
+            return prev;
+
+        }
+        
+        public static MyLinkedList ReverseRecursively(this MyLinkedList list)
+        {
+            return GetNext(list, null);
+
+            MyLinkedList GetNext(MyLinkedList list, MyLinkedList prev)
+            {
+                if (list != null)
+                {
+                    var head = list;
+                    list = list.Next;
+                    head.Next = prev;
+                    prev = head;
+                    
+                    return GetNext(list, prev);
+                }
+
+                return prev;
+            }
         }
     }
 }

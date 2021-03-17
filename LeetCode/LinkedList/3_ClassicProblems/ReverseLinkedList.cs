@@ -9,7 +9,8 @@ namespace LeetCode.LinkedList._3_ClassicProblems
     {
         public static MyLinkedList ReverseList(MyLinkedList list)
         {
-            return list.Reverse();
+            //return list.ReverseIteratively();
+            return list.ReverseRecursively();
         }
     }
 }

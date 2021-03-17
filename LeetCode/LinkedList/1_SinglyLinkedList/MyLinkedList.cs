@@ -126,7 +126,7 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
 
         private string GetDebuggerDisplay()
         {
-            return string.Join(" | ", this.ToFlatList());
+            return string.Join(" | ", this.ValuesToFlatList());
         }
     }
 }
