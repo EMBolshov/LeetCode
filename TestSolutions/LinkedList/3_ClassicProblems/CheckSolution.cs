@@ -19,5 +19,25 @@ namespace TestSolutions.LinkedList._3_ClassicProblems
                 5, 4, 3, 2, 1
             });
         }
+
+        [TestMethod]
+        public void RemoveLinkedListTest()
+        {
+            var list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 6, 3, 4, 5, 6});
+            RemoveLinkedListElements.RemoveElements(list, 6).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
+            {
+                1, 2, 3, 4, 5
+            });
+            
+            list = CommonHelpers.GetLinkedListFromArray(new[] {7, 7, 7, 7});
+            RemoveLinkedListElements.RemoveElements(list, 7).ValuesToFlatList().Should().BeEquivalentTo(new List<int>());
+            
+            list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 2, 1});
+            RemoveLinkedListElements.RemoveElements(list, 2).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
+            {
+                1, 1
+            });
+
+        }
     }
 }
