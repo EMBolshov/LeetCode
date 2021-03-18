@@ -142,5 +142,42 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
                 return prev;
             }
         }
+
+        public static bool IsPalindrome(this MyLinkedList list)
+        {
+            if (list == null)
+                return false;
+
+            if (list.Next == null)
+                return true;
+            
+            var original = list;
+            var fast = list;
+            var slow = list;
+            
+            MyLinkedList half = null;
+            
+            while (fast != null)
+            {
+                fast = fast.Next?.Next;
+                slow = slow.Next;
+
+                if (fast?.Next == null)
+                    half = slow;
+            }
+            
+            var halfReversed = half.ReverseIteratively();
+
+            while (halfReversed != null)
+            {
+                if (original.GetCurrent() != halfReversed.GetCurrent())
+                    return false;
+                
+                halfReversed = halfReversed.Next;
+                original = original.Next;
+            }
+
+            return true;
+        }
     }
 }

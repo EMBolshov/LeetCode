@@ -55,5 +55,18 @@ namespace TestSolutions.LinkedList._3_ClassicProblems
                 1, 3, 5, 7, 2, 4, 6, 8
             });
         }
+        
+        [TestMethod]
+        public void IsPalindromeListTest()
+        {
+            var list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 2, 1});
+            PalindromeLinkedList.IsPalindrome(list).Should().BeTrue();
+            
+            list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2});
+            PalindromeLinkedList.IsPalindrome(list).Should().BeFalse();
+            
+            list = CommonHelpers.GetLinkedListFromArray(new[] {1, 1, 2, 1});
+            PalindromeLinkedList.IsPalindrome(list).Should().BeFalse();
+        }
     }
 }
