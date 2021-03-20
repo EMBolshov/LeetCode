@@ -7,7 +7,7 @@ namespace LeetCode.LinkedList._3_ClassicProblems
     /// </summary>
     public static class OddEvenLinkedList
     {
-        public static MyLinkedList OddEvenList(MyLinkedList head)
+        public static MySinglyLinkedList OddEvenList(MySinglyLinkedList head)
         {
             if (head == null)
                 return null;
@@ -39,7 +39,7 @@ namespace LeetCode.LinkedList._3_ClassicProblems
                     continue;
                 }
                 
-                head = head.Next;
+                head = (MySinglyLinkedList) head.Next;
             }
 
             return result;

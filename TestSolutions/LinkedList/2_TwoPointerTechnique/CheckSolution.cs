@@ -17,7 +17,7 @@ namespace TestSolutions.LinkedList._2_TwoPointerTechnique
             var linkedList = CommonHelpers.GetCycledLinkedList(values, 2);
             LinkedListCycle.HasCycle(linkedList).Should().BeTrue();
 
-            linkedList = new MyLinkedList(1); // No cycle
+            linkedList = new MySinglyLinkedList(1); // No cycle
             LinkedListCycle.HasCycle(linkedList).Should().BeFalse();
         }
 
@@ -34,7 +34,7 @@ namespace TestSolutions.LinkedList._2_TwoPointerTechnique
             cycleNode = linkedList.GetNodeAtIndex(0);
             LinkedListFindCycleStart.DetectCycle(linkedList).Should().BeEquivalentTo(cycleNode);
 
-            linkedList = new MyLinkedList(1); // No cycle
+            linkedList = new MySinglyLinkedList(1); // No cycle
             LinkedListFindCycleStart.DetectCycle(linkedList).Should().BeNull();
 
             values = new[] {-21, 10, 17, 8, 4, 26, 5, 35, 33, -7, -16, 27, -12, 6, 29, -12, 5, 9, 20, 14, 14, 2, 13, -24, 21, 23, -21, 5};
@@ -60,13 +60,13 @@ namespace TestSolutions.LinkedList._2_TwoPointerTechnique
             var listB = CommonHelpers.GetLinkedListFromArray(new[] {5, 6, 1, 8, 4, 5});
             var intersectionValue = 8;
             CommonHelpers.MakeIntersection(intersectionValue, listA, listB, 2, 3);
-            IntersectionOfTwoLinkedLists.GetIntersectionNode(listA, listB).GetCurrent().Should().Be(intersectionValue);
+            IntersectionOfTwoLinkedLists.GetIntersectionNode(listA, listB).Value.Should().Be(intersectionValue);
             
             listA = CommonHelpers.GetLinkedListFromArray(new[] {1, 51});
             listB = CommonHelpers.GetLinkedListFromArray(new[] {2, 4, 6, 51});
             intersectionValue = 51;
             CommonHelpers.MakeIntersection(intersectionValue, listA, listB, 1, 3);
-            IntersectionOfTwoLinkedLists.GetIntersectionNode(listA, listB).GetCurrent().Should().Be(intersectionValue);
+            IntersectionOfTwoLinkedLists.GetIntersectionNode(listA, listB).Value.Should().Be(intersectionValue);
         }
 
         [TestMethod]

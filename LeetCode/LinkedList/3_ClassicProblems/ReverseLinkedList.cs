@@ -7,10 +7,10 @@ namespace LeetCode.LinkedList._3_ClassicProblems
     /// </summary>
     public static class ReverseLinkedList
     {
-        public static MyLinkedList ReverseList(MyLinkedList list)
+        public static MySinglyLinkedList ReverseList(MySinglyLinkedList list)
         {
-            //return list.ReverseIteratively();
-            return list.ReverseRecursively();
+            //return (MySingleLinkedList) list.ReverseIteratively();
+            return (MySinglyLinkedList) list.ReverseRecursively();
         }
     }
 }

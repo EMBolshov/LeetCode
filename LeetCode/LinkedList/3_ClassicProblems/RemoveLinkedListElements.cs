@@ -7,25 +7,25 @@ namespace LeetCode.LinkedList._3_ClassicProblems
     /// </summary>
     public static class RemoveLinkedListElements
     {
-        public static MyLinkedList RemoveElements(MyLinkedList head, int val)
+        public static MySinglyLinkedList RemoveElements(MySinglyLinkedList head, int val)
         {
             if (head == null)
                 return null;
                 
-            MyLinkedList prev = null;
+            MySinglyLinkedList prev = null;
             var result = head;
 
-            if (head.Next == null && head.GetCurrent() == val)
+            if (head.Next == null && head.Value == val)
                 return null;
             
             while (head != null)
             {
-                if (head.GetCurrent() == val)
+                if (head.Value == val)
                 {
                     if (prev == null)
                     {
-                        result = result.Next;
-                        head = head.Next;
+                        result = (MySinglyLinkedList) result.Next;
+                        head = (MySinglyLinkedList) head.Next;
                         continue;
                     }
 
@@ -36,7 +36,7 @@ namespace LeetCode.LinkedList._3_ClassicProblems
                     prev = head;
                 }
 
-                head = head.Next;
+                head = (MySinglyLinkedList) head.Next;
             }
             
             return result;

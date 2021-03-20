@@ -1,50 +1,48 @@
 ﻿using System.Collections.Generic;
+using LeetCode.LinkedList._4_DoublyLinkedList;
 
 namespace LeetCode.LinkedList._1_SinglyLinkedList
 {
-    public static class MyLinkedListExtensions
+    public static class SinglyLinkedListExtensions
     {
-        // for (int i = 0; i <= n; i++) {current = current.Next; return current;}
-        public static MyLinkedList GetNodeAtIndex(this MyLinkedList current, int index)
+        public static ISinglyLinkedList GetNodeAtIndex(this ISinglyLinkedList current, int index)
         {
-            if (index <= 0)
-                return current;
-
-            if (current.Next != null)
-                return GetNodeAtIndex(current.Next, index - 1);
-
-            return null;
-        }
-
-        // while (current.Next != null) { current = current.Next; length++; } return length;
-        public static int GetLength(this MyLinkedList current)
-        {
-            return GetNext(current, 1);
-
-            int GetNext(MyLinkedList current, int depth)
-            {
-                var length = depth;
-                if (current.Next != null)
-                {
-                    length = GetNext(current.Next, depth + 1);
-                }
-
-                return length;
-            }
-        }
-
-        public static MyLinkedList GetTail(this MyLinkedList head)
-        {
-            var current = head.Next;
-            while (current?.Next != null)
+            if (index < 0) return null;
+            
+            for (int i = 0; i < index; i++)
             {
                 current = current.Next;
             }
-
+            
             return current;
         }
 
-        public static bool HasCycle(this MyLinkedList head)
+        public static int GetLength(this ISinglyLinkedList head)
+        {
+            var length = 0;
+            
+            while (head != null)
+            {
+                head = head.Next;
+                length++;
+            }
+
+            return length;
+        }
+
+        public static ISinglyLinkedList GetTail(this ISinglyLinkedList head)
+        {
+            var tail = head;
+            while (head != null)
+            {
+                tail = head;
+                head = head.Next;
+            }
+
+            return tail;
+        }
+
+        public static bool HasCycle(this ISinglyLinkedList head)
         {
             if (head?.Next == null)
                 return false;
@@ -72,7 +70,7 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
             }
         }
 
-        public static MyLinkedList GetCycleIntersect(this MyLinkedList head)
+        public static ISinglyLinkedList GetCycleIntersect(this ISinglyLinkedList head)
         {
             var firstPointer = head;
             var secondPointer = head;
@@ -89,27 +87,22 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
             return null;
         }
 
-        public static int GetCurrent(this MyLinkedList node)
-        {
-            return node.Get(0);
-        }
-
-        public static IEnumerable<int> ValuesToFlatList(this MyLinkedList head)
+        public static IEnumerable<int> ValuesToFlatList(this ISinglyLinkedList head)
         {
             var result = new List<int>();
 
             while (head != null)
             {
-                result.Add(head.GetCurrent());
+                result.Add(head.Value);
                 head = head.Next;
             }
 
             return result;
         }
 
-        public static MyLinkedList ReverseIteratively(this MyLinkedList list)
+        public static ISinglyLinkedList ReverseIteratively(this ISinglyLinkedList list)
         {
-            MyLinkedList prev = null;
+            ISinglyLinkedList prev = null;
 
             while (list != null)
             {
@@ -123,11 +116,11 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
 
         }
         
-        public static MyLinkedList ReverseRecursively(this MyLinkedList list)
+        public static ISinglyLinkedList ReverseRecursively(this ISinglyLinkedList list)
         {
             return GetNext(list, null);
 
-            MyLinkedList GetNext(MyLinkedList list, MyLinkedList prev)
+            ISinglyLinkedList GetNext(ISinglyLinkedList list, ISinglyLinkedList prev)
             {
                 if (list != null)
                 {
@@ -143,7 +136,7 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
             }
         }
 
-        public static bool IsPalindrome(this MyLinkedList list)
+        public static bool IsPalindrome(this ISinglyLinkedList list)
         {
             if (list == null)
                 return false;
@@ -155,7 +148,7 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
             var fast = list;
             var slow = list;
             
-            MyLinkedList half = null;
+            ISinglyLinkedList half = null;
             
             while (fast != null)
             {
@@ -170,7 +163,7 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
 
             while (halfReversed != null)
             {
-                if (original.GetCurrent() != halfReversed.GetCurrent())
+                if (original.Value != halfReversed.Value)
                     return false;
                 
                 halfReversed = halfReversed.Next;

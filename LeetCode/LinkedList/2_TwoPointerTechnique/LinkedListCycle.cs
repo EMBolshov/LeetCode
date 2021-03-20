@@ -7,8 +7,8 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
     /// </summary>
     public static class LinkedListCycle
     {
-        //Better place for this method is MyLinkedListExtensions
-        public static bool HasCycle(MyLinkedList head)
+        //Better place for this method is LinkedListExtensions
+        public static bool HasCycle(MySinglyLinkedList head)
         {
             return head.HasCycle();
         }

@@ -7,7 +7,7 @@ namespace LeetCode.LinkedList._3_ClassicProblems
     /// </summary>
     public static class PalindromeLinkedList
     {
-        public static bool IsPalindrome(MyLinkedList head)
+        public static bool IsPalindrome(MySinglyLinkedList head)
         {
             return head.IsPalindrome();
         }

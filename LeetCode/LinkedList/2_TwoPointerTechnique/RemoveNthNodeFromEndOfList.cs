@@ -7,7 +7,7 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
     /// </summary>
     public static class RemoveNthNodeFromEndOfList
     {
-        public static MyLinkedList RemoveNthFromEnd(MyLinkedList head, int n)
+        public static MySinglyLinkedList RemoveNthFromEnd(MySinglyLinkedList head, int n)
         {
             if (head == null || n < 0 || head.Next == null && n == 1)
                 return null;
@@ -24,9 +24,9 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
             while (pointer != null)
             {
                 if (i > n)
-                    prevBeforeNFromEnd = prevBeforeNFromEnd.Next;
+                    prevBeforeNFromEnd = (MySinglyLinkedList) prevBeforeNFromEnd.Next;
 
-                pointer = pointer.Next;
+                pointer = (MySinglyLinkedList) pointer.Next;
                 i++;
             }
 
@@ -36,12 +36,12 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
                     head.Next = null;
                     break;
                 case 2 when n == 2:
-                    head = head.Next;
+                    head = (MySinglyLinkedList) head.Next;
                     break;
                 default:
                 {
                     if (prevBeforeNFromEnd == head && i == n)
-                        head = head.Next;
+                        head = (MySinglyLinkedList) head.Next;
                     else 
                         prevBeforeNFromEnd.Next = prevBeforeNFromEnd.Next?.Next;
                     

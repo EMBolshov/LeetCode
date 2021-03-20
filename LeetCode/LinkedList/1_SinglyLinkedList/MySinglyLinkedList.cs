@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 
 namespace LeetCode.LinkedList._1_SinglyLinkedList
 {
@@ -16,25 +15,24 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
      * obj.DeleteAtIndex(index);
      */
     [DebuggerDisplay("{DebuggerDisplay}")]
-    public class MyLinkedList
+    public class MySinglyLinkedList : ISinglyLinkedList
     {
-        //Probably, nullable int is better. But -1 is already reserved as error code for incorrect index
-        private int _value;
         private string DebuggerDisplay => GetDebuggerDisplay();
-        public MyLinkedList Next { get; set; }
+        
+        public int Value { get; set; }
+        public ISinglyLinkedList Next { get; set; }
 
-        public MyLinkedList()
+        public MySinglyLinkedList()
         {
-            _value = -1;
+            Value = -1;
         }
 
         /** Initialize your data structure here. */
-        public MyLinkedList(int value)
+        public MySinglyLinkedList(int value)
         {
-            _value = value;
+            Value = value;
         }
 
-        /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
         public int Get(int index)
         {
             if (index < 0)
@@ -45,56 +43,44 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
             if (element == null)
                 return -1;
                 
-            return element._value;
+            return element.Value;
         }
 
-        /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
         public void AddAtHead(int val)
         {
-            if (_value != -1)
+            if (Value != -1)
             {
-                var oldHead = new MyLinkedList(_value) {Next = Next};
+                var oldHead = new MySinglyLinkedList(Value) {Next = Next};
                 Next = oldHead;
-                _value = val;
+                Value = val;
             }
             else
             {
-                _value = val;
+                Value = val;
             }
         }
 
-        /** Append a node of value val to the last element of the linked list. */
         public void AddAtTail(int val)
         {
-            var newElement = new MyLinkedList(val);
-            var tail = GetTail(this);
+            var newElement = new MySinglyLinkedList(val);
+            var tail = this.GetTail();
 
-            if (tail._value == -1)
+            if (tail.Value == -1)
             {
-                _value = val;
+                Value = val;
                 return;
             }
             
             tail.Next = newElement;
-            
-            MyLinkedList GetTail(MyLinkedList current)
-            {
-                var tail = current;
-                if (current.Next != null)
-                    tail = GetTail(current.Next);
-                
-                return tail;
-            }
         }
 
-        /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
         public void AddAtIndex(int index, int val)
         {
             if (index > this.GetLength())
                 return;
 
             var prev = this.GetNodeAtIndex(index - 1);
-            var element = new MyLinkedList(val);
+            var element = new MySinglyLinkedList(val);
             if (prev != null)
             {
                 element.Next = prev.Next;
@@ -102,20 +88,19 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
             }
             else
             {
-                var oldHead = new MyLinkedList(_value) {Next = Next};
+                var oldHead = new MySinglyLinkedList(Value) {Next = Next};
                 Next = oldHead;
-                _value = val;
+                Value = val;
             }
         }
 
-        /** Delete the index-th node in the linked list, if the index is valid. */
         public void DeleteAtIndex(int index)
         {
             var prev = this.GetNodeAtIndex(index - 1);
 
             if (prev == null)
             {
-                _value = Next?._value ?? -1;
+                Value = Next?.Value ?? -1;
                 Next = Next?.Next;
                 return;
             }

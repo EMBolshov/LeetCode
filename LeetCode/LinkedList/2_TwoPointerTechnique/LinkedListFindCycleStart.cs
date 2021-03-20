@@ -7,7 +7,7 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
     /// </summary>
     public static class LinkedListFindCycleStart
     {
-        public static MyLinkedList DetectCycle(MyLinkedList head)
+        public static MySinglyLinkedList DetectCycle(MySinglyLinkedList head)
         {
             if (head?.Next == null)
                 return null;
@@ -19,7 +19,7 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
             var current = head;
             while (current != intersect)
             {
-                current = current.Next;
+                current = (MySinglyLinkedList) current.Next;
                 intersect = intersect.Next;
             }
 

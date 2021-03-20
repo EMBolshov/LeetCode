@@ -8,9 +8,9 @@ namespace TestSolutions.LinkedList._1_SinglyLinkedList
     public class CheckSolution
     {
         [TestMethod]
-        public void DesignLinkedList()
+        public void DesignSinglyLinkedListTest()
         {
-            var myLinkedList = new MyLinkedList();
+            var myLinkedList = new MySinglyLinkedList();
             myLinkedList.AddAtHead(1);
             myLinkedList.AddAtTail(3);
             myLinkedList.AddAtIndex(1, 2);      // linked list becomes 1->2->3
@@ -19,12 +19,12 @@ namespace TestSolutions.LinkedList._1_SinglyLinkedList
             myLinkedList.Get(1).Should().Be(3); // return 3
             
             
-            myLinkedList = new MyLinkedList();
+            myLinkedList = new MySinglyLinkedList();
             myLinkedList.AddAtHead(1);
             myLinkedList.DeleteAtIndex(0);
             
             
-            myLinkedList = new MyLinkedList();
+            myLinkedList = new MySinglyLinkedList();
             myLinkedList.AddAtHead(7);
             myLinkedList.AddAtHead(2);
             myLinkedList.AddAtHead(1);
@@ -37,7 +37,7 @@ namespace TestSolutions.LinkedList._1_SinglyLinkedList
             myLinkedList.AddAtIndex(5, 0);
             myLinkedList.AddAtHead(6);
             
-            myLinkedList = new MyLinkedList();
+            myLinkedList = new MySinglyLinkedList();
             myLinkedList.AddAtHead(7);
             myLinkedList.AddAtHead(2);
             myLinkedList.AddAtHead(1);
@@ -50,7 +50,7 @@ namespace TestSolutions.LinkedList._1_SinglyLinkedList
             myLinkedList.AddAtIndex(5, 0);
             myLinkedList.AddAtHead(6);
             
-            myLinkedList = new MyLinkedList();
+            myLinkedList = new MySinglyLinkedList();
             myLinkedList.AddAtHead(1);
             myLinkedList.AddAtTail(3);
             myLinkedList.AddAtIndex(1, 2);
@@ -58,13 +58,13 @@ namespace TestSolutions.LinkedList._1_SinglyLinkedList
             myLinkedList.DeleteAtIndex(0);
             myLinkedList.Get(0).Should().Be(2);
             
-            myLinkedList = new MyLinkedList();
+            myLinkedList = new MySinglyLinkedList();
             myLinkedList.AddAtIndex(0, 10);
             myLinkedList.AddAtIndex(0, 20);
             myLinkedList.AddAtIndex(1, 30);
             myLinkedList.Get(0).Should().Be(20);
             
-            myLinkedList = new MyLinkedList();
+            myLinkedList = new MySinglyLinkedList();
             myLinkedList.AddAtTail(1);
             myLinkedList.Get(0).Should().Be(1);
         }
