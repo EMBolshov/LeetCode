@@ -19,15 +19,15 @@ namespace TestSolutions.BinaryTree._1_TraverseATree
             tree.Left.Right.Left = new MyBinaryTree(3);
             tree.Left.Right.Right = new MyBinaryTree(5);
             tree.Right = new MyBinaryTree(7);
-            tree.Right.Right = new MyBinaryTree(8);
-            tree.Right.Right.Left = new MyBinaryTree(9);
-
-            BinaryTreePreorderTraversal.PreorderTraversal(tree).Should().BeEquivalentTo(new List<int>
+            tree.Right.Right = new MyBinaryTree(9);
+            tree.Right.Right.Left = new MyBinaryTree(8);
+            
+            BinaryTreePreorderTraversal.PreorderTraversal(tree).Should().ContainInOrder(new List<int>
             {
-                6, 2, 1, 4, 3, 5, 7, 8, 9
+                6, 2, 1, 4, 3, 5, 7, 9, 8
             });
         }
-        
+
         [TestMethod]
         public void PreorderTraversalTestCase2()
         {
@@ -36,12 +36,12 @@ namespace TestSolutions.BinaryTree._1_TraverseATree
             tree.Left.Left = new MyBinaryTree(2);
             tree.Right = new MyBinaryTree(3);
 
-            BinaryTreePreorderTraversal.PreorderTraversal(tree).Should().BeEquivalentTo(new List<int>
+            BinaryTreePreorderTraversal.PreorderTraversal(tree).Should().ContainInOrder(new List<int>
             {
                 1, 4, 2, 3
             });
         }
-        
+
         [TestMethod]
         public void InorderTraversalTestCase1()
         {
@@ -52,26 +52,26 @@ namespace TestSolutions.BinaryTree._1_TraverseATree
             tree.Left.Right.Left = new MyBinaryTree(3);
             tree.Left.Right.Right = new MyBinaryTree(5);
             tree.Right = new MyBinaryTree(7);
-            tree.Right.Right = new MyBinaryTree(8);
-            tree.Right.Right.Left = new MyBinaryTree(9);
+            tree.Right.Right = new MyBinaryTree(9);
+            tree.Right.Right.Left = new MyBinaryTree(8);
 
-            BinaryTreeInorderTraversal.InorderTraversal(tree).Should().BeEquivalentTo(new List<int>
+            BinaryTreeInorderTraversal.InorderTraversal(tree).Should().ContainInOrder(new List<int>
             {
                 1, 2, 3, 4, 5, 6, 7, 8, 9
             });
         }
-        
+
         [TestMethod]
         public void InorderTraversalSingleNodeTest()
         {
             var tree = new MyBinaryTree(1);
-            
-            BinaryTreeInorderTraversal.InorderTraversal(tree).Should().BeEquivalentTo(new List<int>
+
+            BinaryTreeInorderTraversal.InorderTraversal(tree).Should().ContainInOrder(new List<int>
             {
                 1
             });
         }
-        
+
         [TestMethod]
         public void InorderTraversalTestCase2()
         {
@@ -79,12 +79,12 @@ namespace TestSolutions.BinaryTree._1_TraverseATree
             tree.Left = new MyBinaryTree(3);
             tree.Left.Left = new MyBinaryTree(1);
 
-            BinaryTreeInorderTraversal.InorderTraversal(tree).Should().BeEquivalentTo(new List<int>
+            BinaryTreeInorderTraversal.InorderTraversal(tree).Should().ContainInOrder(new List<int>
             {
                 1, 3, 2
             });
         }
-        
+
         [TestMethod]
         public void InorderTraversalTestCase3()
         {
@@ -93,9 +93,55 @@ namespace TestSolutions.BinaryTree._1_TraverseATree
             tree.Left.Left = new MyBinaryTree(2);
             tree.Left.Left.Left = new MyBinaryTree(3);
 
-            BinaryTreeInorderTraversal.InorderTraversal(tree).Should().BeEquivalentTo(new List<int>
+            BinaryTreeInorderTraversal.InorderTraversal(tree).Should().ContainInOrder(new List<int>
             {
                 3, 2, 1, 4
+            });
+        }
+
+        [TestMethod]
+        public void PostorderTraversalTestCase1()
+        {
+            var tree = new MyBinaryTree(6);
+            tree.Left = new MyBinaryTree(2);
+            tree.Left.Left = new MyBinaryTree(1);
+            tree.Left.Right = new MyBinaryTree(4);
+            tree.Left.Right.Left = new MyBinaryTree(3);
+            tree.Left.Right.Right = new MyBinaryTree(5);
+            tree.Right = new MyBinaryTree(7);
+            tree.Right.Right = new MyBinaryTree(9);
+            tree.Right.Right.Left = new MyBinaryTree(8);
+
+            BinaryTreePostorderTraversal.PostorderTraversal(tree).Should().ContainInOrder(new List<int>
+            {
+                1, 3, 5, 4, 2, 8, 9, 7, 6
+            });
+        }
+
+        [TestMethod]
+        public void PostorderTraversalTestCase2()
+        {
+            var tree = new MyBinaryTree(1);
+            tree.Right = new MyBinaryTree(2);
+            tree.Right.Left = new MyBinaryTree(3);
+
+            BinaryTreePostorderTraversal.PostorderTraversal(tree).Should().ContainInOrder(new List<int>
+            {
+                3, 2, 1
+            });
+        }
+
+        [TestMethod]
+        public void PostorderTraversalTestCase3()
+        {
+            var tree = new MyBinaryTree(1);
+            tree.Left = new MyBinaryTree(2);
+            tree.Left.Left = new MyBinaryTree(3);
+            tree.Left.Left.Left = new MyBinaryTree(4);
+
+            BinaryTreePostorderTraversal.PostorderTraversal(tree).Should().ContainInOrder(new List<int>
+            {
+                4, 3, 2, 1
             });
         }
     }
