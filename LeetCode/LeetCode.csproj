@@ -6,7 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="BinaryTree\2_SolveProblemsRecursively" />
       <Folder Include="BinaryTree\3_Conclusion" />
       <Folder Include="LinkedList\5_Conclusion" />
     </ItemGroup>
