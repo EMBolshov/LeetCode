@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace TestSolutions.LinkedList._4_DoublyLinkedList
 {
     [TestClass]
-    public class CheckSolution
+    public class DesignDoublyLinkedListTest
     {
         [TestMethod]
         public void AddAtIndexTest()

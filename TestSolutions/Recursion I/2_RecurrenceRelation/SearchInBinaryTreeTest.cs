@@ -3,10 +3,10 @@ using LeetCode.BinaryTree._0_BinaryTree;
 using LeetCode.Recursion_I._2_RecurrenceRelation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace TestSolutions.Recursion_I._2_ReccurenceRelation
+namespace TestSolutions.Recursion_I._2_RecurrenceRelation
 {
     [TestClass]
-    public class CheckSolution
+    public class SearchInBinaryTreeTest
     {
         [TestMethod]
         public void SearchInBinarySearchTreeTestCase1()
