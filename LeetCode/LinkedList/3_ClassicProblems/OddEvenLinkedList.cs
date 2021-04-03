@@ -39,7 +39,7 @@ namespace LeetCode.LinkedList._3_ClassicProblems
                     continue;
                 }
                 
-                head = (MySinglyLinkedList) head.Next;
+                head = head.Next;
             }
 
             return result;

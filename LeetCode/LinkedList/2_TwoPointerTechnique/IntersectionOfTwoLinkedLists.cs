@@ -26,11 +26,11 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
                     if (pointer == current)
                         return pointer;
                     
-                    current = (MySinglyLinkedList) current.Next;
+                    current = current.Next;
                     
                 } while (current != null);
                 
-                pointer = (MySinglyLinkedList) pointer.Next;
+                pointer = pointer.Next;
                 current = headA.Next != null ? headB : headA;
                 
             } 

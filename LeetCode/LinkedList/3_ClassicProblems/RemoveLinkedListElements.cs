@@ -24,8 +24,8 @@ namespace LeetCode.LinkedList._3_ClassicProblems
                 {
                     if (prev == null)
                     {
-                        result = (MySinglyLinkedList) result.Next;
-                        head = (MySinglyLinkedList) head.Next;
+                        result = result.Next;
+                        head = head.Next;
                         continue;
                     }
 
@@ -36,7 +36,7 @@ namespace LeetCode.LinkedList._3_ClassicProblems
                     prev = head;
                 }
 
-                head = (MySinglyLinkedList) head.Next;
+                head = head.Next;
             }
             
             return result;

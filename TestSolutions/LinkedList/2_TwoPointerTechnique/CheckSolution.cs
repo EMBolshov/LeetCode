@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Linq;
 using FluentAssertions;
 using LeetCode.LinkedList._1_SinglyLinkedList;
 using LeetCode.LinkedList._2_TwoPointerTechnique;
@@ -73,34 +73,24 @@ namespace TestSolutions.LinkedList._2_TwoPointerTechnique
         public void RemoveNthNodeFromEndOfListTest()
         {
             var list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 3, 4, 5});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
-            {
-                1, 2, 3, 5
-            });
+            var output = RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ValuesToFlatList();
+            output.SequenceEqual(new[] {1, 2, 3, 5}).Should().BeTrue();
             
             list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
-            {
-                2
-            });
+            output = RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ValuesToFlatList();
+            output.SequenceEqual(new[] {2}).Should().BeTrue();
             
             list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 1).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
-            {
-                1
-            });
+            output = RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 1).ValuesToFlatList();
+            output.SequenceEqual(new[] {1}).Should().BeTrue();
 
             list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 3});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
-            {
-                1, 3
-            });
+            output = RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 2).ValuesToFlatList();
+            output.SequenceEqual(new[] {1, 3}).Should().BeTrue();
             
             list = CommonHelpers.GetLinkedListFromArray(new[] {1, 2, 3});
-            RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 3).ValuesToFlatList().Should().BeEquivalentTo(new List<int>
-            {
-                2, 3
-            });
+            output = RemoveNthNodeFromEndOfList.RemoveNthFromEnd(list, 3).ValuesToFlatList();
+            output.SequenceEqual(new[] {2, 3}).Should().BeTrue();
         }
     }
 }

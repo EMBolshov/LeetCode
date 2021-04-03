@@ -19,7 +19,7 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
             var current = head;
             while (current != intersect)
             {
-                current = (MySinglyLinkedList) current.Next;
+                current = current.Next;
                 intersect = intersect.Next;
             }
 

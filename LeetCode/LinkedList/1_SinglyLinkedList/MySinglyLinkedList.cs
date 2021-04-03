@@ -15,12 +15,12 @@ namespace LeetCode.LinkedList._1_SinglyLinkedList
      * obj.DeleteAtIndex(index);
      */
     [DebuggerDisplay("{DebuggerDisplay}")]
-    public class MySinglyLinkedList : ISinglyLinkedList
+    public class MySinglyLinkedList
     {
         private string DebuggerDisplay => GetDebuggerDisplay();
         
         public int Value { get; set; }
-        public ISinglyLinkedList Next { get; set; }
+        public MySinglyLinkedList Next { get; set; }
 
         public MySinglyLinkedList()
         {

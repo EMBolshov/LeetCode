@@ -4,7 +4,7 @@ namespace LeetCode.LinkedList._4_DoublyLinkedList
 {
     public static class DoublyLinkedListExtensions
     {
-        public static IDoublyLinkedList GetNodeAtIndex(this IDoublyLinkedList current, int index)
+        public static MyDoublyLinkedList GetNodeAtIndex(this MyDoublyLinkedList current, int index)
         {
             if (index < 0) return null;
             
@@ -16,7 +16,7 @@ namespace LeetCode.LinkedList._4_DoublyLinkedList
             return current;
         }
 
-        public static int GetLength(this IDoublyLinkedList head)
+        public static int GetLength(this MyDoublyLinkedList head)
         {
             var length = 0;
             
@@ -29,7 +29,7 @@ namespace LeetCode.LinkedList._4_DoublyLinkedList
             return length;
         }
 
-        public static IDoublyLinkedList GetTail(this IDoublyLinkedList head)
+        public static MyDoublyLinkedList GetTail(this MyDoublyLinkedList head)
         {
             var tail = head;
             while (head != null)
@@ -41,7 +41,7 @@ namespace LeetCode.LinkedList._4_DoublyLinkedList
             return tail;
         }
 
-        public static IEnumerable<int> ValuesToFlatList(this IDoublyLinkedList head)
+        public static IEnumerable<int> ValuesToFlatList(this MyDoublyLinkedList head)
         {
             var result = new List<int>();
 

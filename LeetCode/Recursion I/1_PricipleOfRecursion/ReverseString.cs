@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace LeetCode.Recursion_I._1_PricipleOfRecursion
+﻿namespace LeetCode.Recursion_I._1_PricipleOfRecursion
 {
     /// <summary>
     /// https://leetcode.com/explore/learn/card/recursion-i/250/principle-of-recursion/1440/

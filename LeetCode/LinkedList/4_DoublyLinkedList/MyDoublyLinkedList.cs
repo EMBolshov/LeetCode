@@ -6,12 +6,12 @@ namespace LeetCode.LinkedList._4_DoublyLinkedList
     /// https://leetcode.com/explore/learn/card/linked-list/210/doubly-linked-list/1294/
     /// </summary>
     [DebuggerDisplay("{DebuggerDisplay}")]
-    public class MyDoublyLinkedList : IDoublyLinkedList
+    public class MyDoublyLinkedList
     {
         private string DebuggerDisplay => GetDebuggerDisplay();
 
-        public IDoublyLinkedList Next { get; set; }
-        public IDoublyLinkedList Prev { get; set; }
+        public MyDoublyLinkedList Next { get; set; }
+        public MyDoublyLinkedList Prev { get; set; }
         public int Value { get; set; }
 
         public MyDoublyLinkedList()
@@ -102,7 +102,7 @@ namespace LeetCode.LinkedList._4_DoublyLinkedList
         public void DeleteAtIndex(int index)
         {
             var prev = this.GetNodeAtIndex(index - 1);
-            IDoublyLinkedList next;
+            MyDoublyLinkedList next;
             
             if (prev == null)
             {

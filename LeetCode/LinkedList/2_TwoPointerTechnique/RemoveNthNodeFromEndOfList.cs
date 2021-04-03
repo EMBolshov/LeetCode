@@ -24,9 +24,9 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
             while (pointer != null)
             {
                 if (i > n)
-                    prevBeforeNFromEnd = (MySinglyLinkedList) prevBeforeNFromEnd.Next;
+                    prevBeforeNFromEnd = prevBeforeNFromEnd.Next;
 
-                pointer = (MySinglyLinkedList) pointer.Next;
+                pointer = pointer.Next;
                 i++;
             }
 
@@ -36,12 +36,12 @@ namespace LeetCode.LinkedList._2_TwoPointerTechnique
                     head.Next = null;
                     break;
                 case 2 when n == 2:
-                    head = (MySinglyLinkedList) head.Next;
+                    head = head.Next;
                     break;
                 default:
                 {
                     if (prevBeforeNFromEnd == head && i == n)
-                        head = (MySinglyLinkedList) head.Next;
+                        head = head.Next;
                     else 
                         prevBeforeNFromEnd.Next = prevBeforeNFromEnd.Next?.Next;
                     

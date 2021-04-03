@@ -154,7 +154,7 @@ namespace TestSolutions.LinkedList._4_DoublyLinkedList
             myLinkedList.Get(1).Should().Be(3); // return 3
         }
 
-        private static void ValidateDoublyLinkedList(IDoublyLinkedList head)
+        private static void ValidateDoublyLinkedList(MyDoublyLinkedList head)
         {
             head.Prev.Should().BeNull();
             var prev = head; 
