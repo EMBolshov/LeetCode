@@ -11,28 +11,34 @@ namespace LeetCode.Recursion_I._2_RecurrenceRelation
         public static IList<int> GetRow(int rowIndex)
         {
             var result = new List<int>();
-            result = GetRowRecursively(result,rowIndex);
-            return result;
+            var cache = new Dictionary<(int, int), int>();
             
-            List<int> GetRowRecursively(List<int> prevRow, int targetIndex, int currentIndex = 0)
+            for (int i = 0; i <= rowIndex; i++)
             {
-                if (currentIndex == targetIndex)
-                    return prevRow;
+                result.Add(GetValue(cache, rowIndex, i));
+            }
 
-                var currentRow = new List<int>();
-                for (int i = 0; i <= targetIndex; i++)
+            return result;
+
+            static int GetValue(IDictionary<(int, int), int> cache, int row, int index)
+            {
+                if (row < 0 || index < 0)
+                    return 0;
+            
+                if (row == 0 || index == row)
+                    return 1;
+
+                if (cache.ContainsKey((row, index)))
                 {
-                    if (i == 0 || i == targetIndex)
-                    {
-                        currentRow.Add(1);
-                    }
-                    else
-                    {
-                        currentRow.Add(prevRow[i - 1] + prevRow[i]);
-                    }
+                    return cache[(row, index)];
                 }
 
-                return GetRowRecursively(currentRow, targetIndex, currentIndex + 1);
+                var left = GetValue(cache, row - 1, index - 1);
+                var right = GetValue(cache, row - 1, index);
+
+                cache[(row, index)] = left + right;
+
+                return left + right;
             }
         }
     }

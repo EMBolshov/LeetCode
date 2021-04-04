@@ -5,7 +5,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestSolutions.Recursion_I._2_RecurrenceRelation
 {
-    [Ignore]
     [TestClass]
     // ReSharper disable once InconsistentNaming
     public class PascalsTriangleIITest
