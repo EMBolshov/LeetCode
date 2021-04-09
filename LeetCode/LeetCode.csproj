@@ -8,6 +8,10 @@
     <ItemGroup>
       <Folder Include="BinaryTree\3_Conclusion" />
       <Folder Include="LinkedList\5_Conclusion" />
+      <Folder Include="QueueStack\2_QueueAndBFS" />
+      <Folder Include="QueueStack\3_Stack" />
+      <Folder Include="QueueStack\4_StackAndDFS" />
+      <Folder Include="QueueStack\5_Conclusion" />
     </ItemGroup>
 
 </Project>
