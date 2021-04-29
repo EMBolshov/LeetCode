@@ -3,6 +3,9 @@ using System.Linq;
 
 namespace LeetCode.OtherProblems.Medium
 {
+    /// <summary>
+    /// https://leetcode.com/problems/valid-sudoku/
+    /// </summary>
     public static class ValidSudoku
     {
         public static bool IsValidSudoku(char[][] board)
